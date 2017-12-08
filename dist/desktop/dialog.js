@@ -1,5 +1,5 @@
 /*!
- * dialog.js v1.0.4
+ * dialog.js v1.0.0
  * (c) 2014-2017 jianxcao
  * Released under the MIT License.
  */
