@@ -1,0 +1,28 @@
+.layout {
+	position: "fixed";
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: #000;
+	opacity: .4;
+	overflow: hidden;
+}
+.overlay-animate-enter {
+  opacity: 0;
+}
+.overlay-animate-enter-active {
+  opacity: .4;
+	transition: all .3s ease;
+}
+.overlay-animate-leave{
+	opacity: .4;
+}
+.overlay-animate-leave-active {
+	opacity: 0;
+	transition: all .3s ease;
+}
+.body-overflow {
+	overflow: hidden;
+}

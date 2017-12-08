@@ -1,0 +1,279 @@
+/*
+ * Dialog对话框样式表
+<div class="m-iDialog">
+	<div class="iDialogContent">
+		<div class="iDialogHead"><h1>title</h1></div><a class="iDialogClose" href="#"></a>
+		<div class="iDialogBody"><div class="iDialogMain">
+			内容模块
+		</div></div>
+		<div class="iDialogFoot">
+			<a class='iDialogBtn'><span>确定</span></a><a class='iDialogBtn'><span>取消</span></a>
+		</div>
+	</div>
+</div>
+<div class='iDialogLayout iOpacityZero'></div>
+ */
+
+/*不依赖于其他css库，所以自己写了 media*/
+@media screen and (min-width:240px) {
+    html, body, button, input, select, textarea {
+        font-size:9px;
+    }
+}
+@media screen and (min-width:320px) {
+	html, body, button, input, select, textarea {
+		font-size:12px;
+	}
+}
+@media screen and (min-width:375px) {
+	html, body, button, input, select, textarea {
+		font-size:14.0625px;
+	}
+}
+@media screen and (min-width:420px) {
+	html, body, button, input, select, textarea {
+		font-size:16px;
+	}
+}
+/* 低版本浏览器出现滚动条，导致宽度小于480的处理*/
+@media screen and (min-width:450px) {
+	html, body, button, input, select, textarea {
+		font-size:17px;
+	}
+}
+/* 1.5倍像素大小页面兼容代码 */
+@media screen and (min-width:480px) {
+	html, body, button, input, select, textarea {
+		font-size:18px;
+	}
+}
+/* 针对小米的540分辨率做了优化 */
+@media screen and (min-width:540px) {
+	html, body, button, input, select, textarea {
+		font-size:20.25px;
+	}
+}
+/* 针对魅族的600分辨率做了优化 */
+@media screen and (min-width:600px) {
+	html, body, button, input, select, textarea {
+		font-size:22px;
+	}
+}
+/* 两倍像素大小页面兼容代码 */
+@media screen and (min-width:640px) {
+	html, body, button, input, select, textarea {
+		font-size:24px;
+	}
+}
+
+/* 750分辨率 */
+@media screen and (min-width:750px) {
+	html, body, button, input, select, textarea {
+		font-size:28.125px;
+	}
+}
+@font-face {font-family: "dialog-font";
+  src: url('../font/iconfont.eot'); /* IE9*/
+  src: url('../font/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../font/iconfont.woff') format('woff'), /* chrome, firefox */
+  url('../font/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../font/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"dialog-font" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+//  默认隐藏关闭按钮
+.es-dialog-close{
+	display: none;
+	padding: .3rem 1rem;
+	em{
+		font-size: 1.06666667rem;
+		color: #333333;
+		font-family: 'dialog-font';
+		&:active {
+			transform: scale(.9, .9);
+		}
+	}
+}
+.es-dialog-wrap{
+	visibility: hidden;
+}
+// wap 弹窗默认样式
+.es-dialog {
+	font:1.0rem/1.0rem "Microsoft Yahei","simsun";
+	position: fixed;
+	z-index: 1000;
+	text-align:left;
+	font-size: 1.06666667rem;
+	width: 22.91rem;
+	border-radius: 0.3rem;
+	overflow: hidden;
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+	-webkit-user-select: none;
+	-webkit-user-drag: none;
+	line-height: 2rem;
+	color: #030303;
+	border-radius: .42rem;
+	background-color: #fdfdfd;
+	.es-dialog-head {
+		height: 3.09rem;
+		h1 {
+			line-height: 3.09rem;
+			text-align: center;
+			font-weight:700;
+			font-size: 1.06666667rem;
+			margin:0;
+			color: #030303;
+		}
+		.es-dialog-close {
+			font-family: "Microsoft YaHei",arial,simsun,SimHei;
+			position: absolute;
+			top: 1px;
+			right: 5px;
+			background: none;
+			em {
+				font-style: normal;
+				cursor: default;
+			}
+		}
+	}
+	.es-dialog-body {
+		min-height: 2.92rem;
+		padding:0;
+		margin:0;
+		background-color: #fdfdfd;
+		.es-dialog-main {
+			background-color: #fdfdfd;
+			overflow:auto;
+			word-wrap: break-word;
+			word-break: break-all;
+			padding:0 1.05rem 1.2rem;
+			line-height:1.5;
+		}
+	}
+	.es-dialog-footer {
+		display: table;
+		table-layout: fixed;
+		width: 100%;
+		border-collapse: collapse;
+		background-color:#f6f6f6;
+		text-align:center;
+		.es-dialog-btn {
+			display: table-cell;
+			outline: none;
+			cursor: pointer;
+			text-align: center;
+			text-decoration: none;
+			font-family: Arial, Helvetica, sans-serif;
+			padding: 0;
+			color: #030303;
+			border: 1px solid #ddd;
+			border-bottom: 0 none;
+			vertical-align: middle;
+			border-radius: 0px;
+			background-color: #fdfdfd;
+			height: 3.2rem;
+			line-height: 3.2rem;
+			color: #0076ff;
+			&:first-child{
+				border-left: 0px;
+			}
+			&:last-child{
+				border-right: 0px;
+			}
+		}
+		.es-dialog-focus-btn {
+
+		}
+	}
+	// 动画控制
+	/*
+	* CSS3 动画样式
+	* 动画过程曲线 http://www.w3school.com.cn/cssref/pr_transition-timing-function.asp
+	*/
+	&.es-ani-show {
+		// transition: all .3s linear;
+		transition: width,height,transform 3s,2s liner 3s,2s;
+	}
+	&.es-ani-hide {
+		transition: all .3s linear;
+	}
+	&.es-dialog-ani-1{
+		opacity:.1;
+	}
+	&.es-dialog-ani-2{
+		opacity: .1;
+		transform: scale(0.1);
+	}
+	&.es-dialog-ani-3{
+		opacity: .1;
+		transform: scale(1.8);
+	}
+	&.es-dialog-ani-4{
+		opacity: .0;
+		transform: perspective(300px) rotateY(90deg);
+	}
+	&.es-dialog-ani-5{
+		opacity: .1;
+		transform: scale(.3);
+	}
+	&.es-dialog-ani-6{
+		opacity: .1;
+		transform: matrix(1, 0, 0, 1, 0, 230);
+	}
+	&.es-dialog-ani-7{
+		opacity: .1;
+		transform: matrix(1, 0, 0, 1, 0, -230);
+	}
+}
+
+.es-dialog-info,
+.es-dialog-error,
+.es-dialog-alert,
+.es-dialog-confirm {
+	.es-dialog-body {
+		.es-dialog-main {
+			padding: 1.4rem;
+			text-align: center;
+			vertical-align: middle;
+		}
+	}
+}
+
+.es-dialog-toast{
+    background: #3e3e3e;
+    box-shadow: 0 0 10px #626262;
+    color: #fff;
+		border:1px solid #3e3e3e;
+    font-size: 1rem;
+    a {
+        text-decoration: underline;
+        color: #ffc000;
+        :link {
+            color: #ffc000;
+        }
+
+        :visited {
+            color: #ffc000;
+        }
+
+        :hover {
+            color: #ffc000;
+        }
+    }
+    .es-dialog-body{
+        &,.es-dialog-main{
+						min-height:inherit;
+            background: transparent;
+						text-align: center;
+        }
+        .es-dialog-main{
+            padding:0.83rem 1.05rem;
+        }
+    }
+}

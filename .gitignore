@@ -1,0 +1,19 @@
+# Mac OS X
+.DS_Store
+
+# JetBrains IDE
+.idea
+
+# npm模块安装目录
+node_modules
+
+# npm报错日志
+npm-debug.log
+
+# 缓存目录
+cache
+
+# vsc配置文件
+.vscode
+
+package-lock.json
