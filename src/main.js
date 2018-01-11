@@ -8,8 +8,8 @@ import {closeAll, dialogManager, conf} from './base';
 	{
 		title :	null,		[可选][string|null|vnode|vue组件] 对话框标题，若标题为空字符，则不显示标题栏（仍显示关闭按钮）；如果为null，则不显示标题栏也不显示关闭按钮；如果没有标题栏，则不能拖动
 		content : "",		[必选][string|null|vnode|vue组件] 对话框内容
-		titlePropsData: [必选][Object] 对话框title组件的数据
-		contentPropsData [可选][Object] 对话框content组件的数据
+		titleData: [必选][Object] 对话框title组件的数据
+		contentData [可选][Object] 对话框content组件的数据
 
 		button : ["确定"],	[可选][字符串数组] 对话框按钮，若为空数组，则不显示按钮栏；如果按钮字符以*开头，则表示是默认按钮，但*不显示，默认按钮在打开时会被聚焦选中
 		method : "append",	[可选][字符串] dom元素的插入位置，支持append和prepend两种情况，默认append

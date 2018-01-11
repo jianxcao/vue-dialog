@@ -1,6 +1,6 @@
 {
   "name": "vue-dialog",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/desktop/dialog.common.js",
   "module": "dist/desktop/dialog.esm.js",
   "unpkg": "dist/desktop/dialog.js",

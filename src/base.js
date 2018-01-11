@@ -92,12 +92,12 @@ const prepareComponent = function (content, ref, instances) {
 				component.options.name = name;
 			}
 		} else {
-			if (content._Ctor && content._Ctor[Vue.cid]) {
-				component = content._Ctor[Vue.cid].extend({
+			if (content._Ctor) {
+				component = Vue.extend(content).extend({
 					mixins: [mixin]
 				});
 			} else {
-				component = Vue.extend(content);
+				component = Vue.extend(Object.assign({}, content));
 				component.mixin(mixin);
 			}
 		}
@@ -824,7 +824,6 @@ const base = {
 		this.$emit('closed', this._closeRet);
 	},
 	render (createElement) {
-		// console.log('in render');
 		// 遮罩index
 		let maskIndex = this.maskIndex;
 		// 弹窗index
@@ -887,7 +886,7 @@ const base = {
 			}
 		},
 		// contentData发生变化则重新生成组件
-		contentData: function () {
+		contentData: function (val) {
 			this._contentComponent = prepareComponent(this.content() || '', 'content', this);
 		},
 		// titleData发生变化则重新生成组件
@@ -1043,10 +1042,10 @@ var ready = function (fn) {
 			setTimeout(fn, 0);
 		} else {
 			var loadFn = function () {
-				document.removeEventListener('DOMContentLoaded', loadFn, false)
+				document.removeEventListener('DOMContentLoaded', loadFn, false);
 				fn();
 			};
-			document.addEventListener('DOMContentLoaded', loadFn, false)
+			document.addEventListener('DOMContentLoaded', loadFn, false);
 		}
 	}
 };
