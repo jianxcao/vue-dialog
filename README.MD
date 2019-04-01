@@ -1,6 +1,6 @@
 # Dialog #
 ---
-电商基础vue Dialog组件，包含PC版本和移动版本
+vue Dialog组件，包含PC版本和移动版本
 
 ## 基本API
 
@@ -21,11 +21,11 @@
        },
        button: ["*hello", "bye"]
 	});
-	hi.content("你好程序猿~");
-	hi.onClosed(function(ret){
+	d.content("你好程序猿~");
+	d.onClosed(function(ret){
 	    alert("dialog destoried!");
 	});
-	hi.$on('close', function(ret) {
+	d.$on('close', function(ret) {
 		alert('dialog close');
 	});
 	window.setTimeout(function(){
