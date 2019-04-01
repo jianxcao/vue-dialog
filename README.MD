@@ -55,8 +55,11 @@ vue Dialog组件，包含PC版本和移动版本
  - dialog实例: 关闭当前对话框
 
 ```js
-//关闭上面demo中的hi对话框，等同 hi.close("test");
-$.dialog(hi, "test");
+//关闭上面demo中的hi对话框
+d.close("test");
+dialog(d, "test");
+//关闭所有
+dialog();
 ```
 
 ### options说明
