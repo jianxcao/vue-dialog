@@ -2,7 +2,6 @@ const gulp = require('gulp');
 const buildEntry = require('./rollupBuild')
 const builds = require('./config');
 const buildDemoes = require('./config-demo');
-console.log(buildDemoes);
 gulp.task('copy',  function() {
   return gulp.src(['../src/font/**/*'])
     .pipe(gulp.dest('../dist/font'))
